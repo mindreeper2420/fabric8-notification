@@ -28,7 +28,7 @@
         box-shadow: 0 2px 4px #d7d7d7;">
     <div style="
           width: 100%;">
-      <img src="openshift_logo_black.png" width="25%" height="45px" />
+      <img src="{{.webURL}}/_openshiftio/assets/images/openshift_logo_black.png" width="25%" height="45px" />
       <div style="
             width: 95%;
             margin: 10px auto;
@@ -36,11 +36,11 @@
       </div>
       <p style="
           display: inline-flex;">
-        <img src="{{sizeImage .commentOwner.Data.Attributes.ImageURL 22}}" style="height: 22px; width: 22px;" />&nbsp;
+        <img src="{{sizeImage .workitemOwner.Data.Attributes.ImageURL 22}}" style="height: 22px; width: 22px;" />&nbsp;
         <span style="
               margin-top: 5px;">
-          {{.commentOwner.Data.Attributes.FullName}} <span style="font-weight: 700;">updated</span> work item
-          <span style="
+          {{.workitemOwner.Data.Attributes.FullName}} <span style="font-weight: 700;">updated</span> work item
+        <span style="
                   max-width: 250px;
                   white-space: nowrap;
                   overflow: hidden;
@@ -55,7 +55,7 @@
               {{index .workitem.Data.Attributes "system.number"}}
             </a>
           </span>
-          <span style="
+        <span style="
                   border: 1px solid purple;
                   width: auto;">
             <a href="#"
@@ -64,7 +64,7 @@
                   font-size: 12px;
                   color: purple;
                   text-decoration: none;">
-              Spacename 1
+              {{.space.Data.Attributes.Name}}
             </a>
           </span>
         </span>
@@ -92,10 +92,15 @@
               <span style="font-weight: 700;">Status</span>
             </td>
             <td style="text-align: left; padding-left: 10px;">
-              <span style="color: #a30000;">{{index .workitem.Dada.Attributes "system.state"}}</span>&nbsp;
-              <img src="fa-long-arrow-right.png" />&nbsp;
-              <span style="color: #3f9c35;">{{index .workitem.Dada.Attributes "system.state"}}</span>
+              <span style="color: #3f9c35;">{{index .workitem.Data.Attributes "system.state"}}</span>
             </td>
+            <!--
+            <td style="text-align: left; padding-left: 10px;">
+              <span style="color: #a30000;">{{index .workitem.Data.Attributes "system.state"}}</span>&nbsp;
+              <img src="fa-long-arrow-right.png" />&nbsp;
+              <span style="color: #3f9c35;">{{index .workitem.Data.Attributes "system.state"}}</span>
+            </td>
+            -->
           </tr>
         </table>
       </p>
@@ -120,6 +125,7 @@
               font-weight: 500;">
           <img src="fa-comment.png" /> Comment</a>
       </span>
+      <!--
       <span style="width: 200px;">
         <a href="#"
             style="
@@ -128,6 +134,7 @@
               font-weight: 500;">
           <img src="fa-mail-link.png" /> Reply to this email directly</a>
       </span>
+        -->
     </div>
   </div>
 </body>
