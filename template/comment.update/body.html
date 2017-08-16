@@ -65,7 +65,7 @@
                   font-size: 12px;
                   color: purple;
                   text-decoration: none;">
-              {{.space.Data.Attributes.Name}}
+              {{lower .spaceOwner.Data.Attributes.Username}}/{{lower .space.Data.Attributes.Name}}
             </a>
           </span>
         </span>
