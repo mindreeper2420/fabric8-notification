@@ -6,6 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Work Item Comment Updated</title>
+  <style>
+    tr td ul li img {
+      max-width: 500px;
+    }
+    tr td pre {
+      overflow: auto;
+    }
+  </style>
 </head>
 
 <body style="
@@ -34,9 +42,8 @@
             margin: 10px auto;
             border: 1px solid #d7d7d7;">
       </div>
-      <p style="
-          display: inline-flex;">
-        <img src="{{sizeImage .commentOwner.Data.Attributes.ImageURL 22}}" style="height: 22px; width: 22px;" />&nbsp;
+      <p>
+        <img src="{{sizeImage .commentOwner.Data.Attributes.ImageURL 22}}" style="height: 22px; width: 22px; vertical-align: middle;" />&nbsp;
         <span style="
               margin-top: 5px;">
           <a href="{{.webURL}}/{{.commentOwner.Data.Attributes.Username}}" style="color: #0088ce; text-decoration: none;">{{.commentOwner.Data.Attributes.FullName}}</a>&nbsp;
@@ -47,7 +54,7 @@
                   overflow: hidden;
                   text-overflow: ellipsis;
                   display: inline-block;
-                  vertical-align: bottom;">
+                  vertical-align: middle;">
             <a href="{{.webURL}}/{{.spaceOwner.Data.Attributes.Username}}/{{.space.Data.Attributes.Name}}/plan/detail/{{.workitem.Data.ID}}"
               style="
                 color: #0088ce;
@@ -90,10 +97,6 @@
           min-height: 150px;
           max-width: 700px;">
         {{raw .comment.Data.Attributes.BodyRendered}}
-        <!--
-        <span style="background-color: #b9f6ca;">@Bob</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-        do eiusmod tempor incididunt ut labore et dolore magna aliqua. <span style="background-color: #ffcdd2; text-decoration: line-through;"> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
-        -->
       </p>
     </div>
     <div style="
@@ -116,16 +119,6 @@
               font-weight: 500;">
           <img src="fa-comment.png" /> Comment</a>
       </span>
-      <!--
-      <span style="width: 200px;">
-        <a href="#"
-            style="
-              color: #8b8d8f;
-              text-decoration: none;
-              font-weight: 500;">
-          <img src="fa-mail-link.png" /> Reply to this email directly</a>
-      </span>
-      -->
     </div>
   </div>
 </body>

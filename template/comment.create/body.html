@@ -6,6 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Work Item Comment Created</title>
+  <style>
+    tr td ul li img {
+      max-width: 500px;
+    }
+    tr td pre {
+      overflow: auto;
+    }
+  </style>
 </head>
 
 <body style="
@@ -34,9 +42,8 @@
             margin: 10px auto;
             border: 1px solid #d7d7d7;">
       </div>
-      <p style="
-          display: inline-flex;">
-        <img src="{{sizeImage .commentOwner.Data.Attributes.ImageURL 22}}" style="height: 22px; width: 22px;" />&nbsp;
+      <p>
+        <img src="{{sizeImage .commentOwner.Data.Attributes.ImageURL 22}}" style="height: 22px; width: 22px; vertical-align: middle;" />&nbsp;
         <span style="
               margin-top: 5px;">
           <a href="{{.webURL}}/{{.commentOwner.Data.Attributes.Username}}" style="color: #0088ce; text-decoration: none;">{{.commentOwner.Data.Attributes.FullName}}</a>&nbsp;
@@ -47,7 +54,7 @@
                   overflow: hidden;
                   text-overflow: ellipsis;
                   display: inline-block;
-                  vertical-align: bottom;">
+                  vertical-align: middle;">
             <a href="{{.webURL}}/{{.spaceOwner.Data.Attributes.Username}}/{{.space.Data.Attributes.Name}}/plan/detail/{{.workitem.Data.ID}}"
               style="
                 color: #0088ce;
